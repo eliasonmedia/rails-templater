@@ -17,3 +17,6 @@ $stdout << "\n\n"
 
 apply templater.recipe('mongoid') if templater.orm.mongoid?
 apply templater.recipe('active_record') if templater.orm.active_record?
+
+include_kaminari = yes?('[Models] Include kaminari paginator? [y|n]: ', Thor::Shell::Color::BLUE)
+apply templater.recipe('kaminari') if include_kaminari
