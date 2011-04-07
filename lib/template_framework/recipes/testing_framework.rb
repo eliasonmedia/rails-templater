@@ -21,4 +21,5 @@ apply templater.recipe('test_unit') if templater.testing_framework.test_unit?
 # Fixture Replacement
 apply templater.recipe('factory_girl')
 
-apply templater.recipe('cucumber')
+include_cucumber = yes?("\n[Integration Testing] Would you like to add integration testing with Cucumber? [y|n]: ", Thor::Shell::Color::BLUE)
+apply templater.recipe('cucumber') if include_cucumber
