@@ -18,4 +18,7 @@ $stdout << "\n\n"
 apply templater.recipe('rspec') if templater.testing_framework.rspec?
 apply templater.recipe('test_unit') if templater.testing_framework.test_unit?
 
+# Fixture Replacement
+apply templater.recipe('factory_girl')
+
 apply templater.recipe('cucumber')
