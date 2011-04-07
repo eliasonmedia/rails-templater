@@ -1,5 +1,5 @@
 say("\nReplacing Fixtures with FactoryGirl\n", Thor::Shell::Color::YELLOW)
-gem 'factory_girl_rails', :group => [:development, :test]
+gem 'factory_girl_rails', :group => :test
 
 if templater.testing_framework.rspec?
   templater.post_bundler do
