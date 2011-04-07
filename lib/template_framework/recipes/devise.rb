@@ -23,7 +23,8 @@ templater.post_bundler do
       remove_file erb_file
 
       if templater.template_engine.slim?
-        system "bundle exec haml2slim #{haml_file} #{erb_file.sub /erb$/, 'slim'}"
+        slim_file = haml_file.sub /haml$/, 'slim'
+        system "bundle exec haml2slim #{haml_file} #{slim_file}"
         remove_file haml_file
       end
     end
